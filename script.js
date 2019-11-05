@@ -14,6 +14,10 @@ var btnPasser = document.querySelector(".btn-passe");
 var nomPla1 = document.querySelector("#nom-0");
 var nomPla2 = document.querySelector("#nom-1");
 
+
+
+
+
 var tempScore = 0;
 var scoreTotal1=0;
 var scoreTotal2=0;
