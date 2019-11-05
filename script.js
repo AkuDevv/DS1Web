@@ -11,11 +11,14 @@ var btnNouveau = document.querySelector(".btn-new");
 var deImage = document.querySelector(".de");
 var btnLancer = document.querySelector(".btn-lancer");
 var btnPasser = document.querySelector(".btn-passe");
+var nomPla1 = document.querySelector("#nom-0");
+var nomPla2 = document.querySelector("#nom-1");
 
 var tempScore = 0;
 var scoreTotal1=0;
 var scoreTotal2=0;
 var joueurActif = 0;
+var score_max = 20;
 
 function switchPlayer()
 {
@@ -85,6 +88,11 @@ function joueurSuivant()
     if(joueurActif == 0)
     {
         scoreTotal1 = scoreTotal1+tempScore;
+        if(scoreTotal1 >= score_max)
+        {
+            nomPla1.innerHTML="Vainqueur!";
+            init();
+        }
         score.innerHTML = scoreTotal1;
         switchPlayer();
         tempScore = 0;
@@ -93,6 +101,11 @@ function joueurSuivant()
     else
     {
         scoreTotal2 = scoreTotal2+tempScore;
+        if(scoreTotal2 >= score_max)
+        {
+            nomPla1.innerHTML="Vainqueur!";
+            init();
+        }
         score2.innerHTML = scoreTotal2;
         switchPlayer();
         tempScore = 0;
